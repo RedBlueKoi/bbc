@@ -1,0 +1,171 @@
+/* GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css?family=Kiwi+Maru");
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --title-font-family: "Kiwi Maru", serif;
+  --default-font-family: "Univers", sans-serif;
+
+  /* --default-font-size: 1.15rem; */
+  /* --secondary-font-size: 1.5rem; */
+  --default-text-color: #ffffff;
+  --secondary-text-color: #96002b;
+  --tertiary-text-color: #090909;
+  --default-dark-text-color: #496c6b;
+
+  --primary-back-dark: #34070b;
+  --secondary-back-color: #ffffff;
+  --tertiary-back-color: #888686;
+
+  --primary-button-color: #34070b;
+  --secondary-button-color: #96002b;
+  --tertiary-button-color: #3f603d;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* font properties (inherited) */
+  background: var(--tertiary-back-color);
+  color: var(--default-text-color);
+  font-family: var(--default-font-family);
+  font-size: var(--default-font-size);
+}
+
+.font-heading {
+  font-family: var(--title-font-family);
+}
+/* ported */
+
+/* UTILITY CLASSES */
+
+/*
+  When you get rid of margins, everything is crammed together. For example,
+  paragraphs will have no space between them, which is NOT good design.
+  The following utility class gives a top margin of 1.25rem (20px)
+  to all children inside a parent with class .flow-content,
+  EXCEPT for the first child, which will NOT get a margin.
+  That's because "elem + elem" means that the rule should be applied
+  to the first elem only when it is followed by another elem.
+*/
+.flow-content > * + * {
+  margin-top: 1rem;
+}
+
+/*
+  Giving various sections of your page this utility class
+  will ensure a nice padding around the contents.
+*/
+.container {
+  padding: 1rem;
+}
+
+/*
+  Sometimes it's nice to have a section where the foreground
+  and background colors are (more-or-less) flipped for contrast.
+  This utility class does that.
+*/
+.dark-background {
+  background-color: var(--tertiary-back-color);
+  color: var(--secondary-button-color);
+}
+
+/* BUTTONS */
+
+/*
+  These rules gives simplistic styles for buttons inside and outside of forms.
+  A richer web site will likely have multiple styles that are defined
+  by multiple classes. At a minimum, you might have class .primary-button
+  and .secondary-button.
+*/
+
+.button,
+.button:visited {
+  display: inline-flex;
+  background: var(--primary-back-dark);
+  border: none;
+  outline: none;
+  color: var(--default-text-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 999999px;
+  min-height: 2.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:hover,
+.button:active {
+  background: var(--secondary-button-color);
+  color: var(--default-text-color);
+}
+
+.fontAwesome-button {
+  font-family: FontAwesome, serif;
+  padding: 8px 10px;
+}
+
+.secondary-button {
+  background: var(--secondary-button-color);
+  border: none;
+  color: var(--default-text-color);
+  font-size: var(--secondary-font-size);
+}
+
+.secondary-button:hover {
+  background: var(--primary-back-dark);
+  color: var(--tertiary-text-color);
+}
+
+.tertiary-button {
+  background: var(--secondary-button-color);
+  border: none;
+  color: var(--default-text-color);
+  font-size: var(--default-font-size);
+  text-decoration: none;
+  padding: 0.4em 0.2em;
+  cursor: pointer;
+  border-radius: 50px;
+  border: 0;
+  height: 37px;
+  list-style: none;
+  width: 200px;
+  margin: 0;
+  align-content: center;
+  text-align: center;
+}
+
+.tertiary-button:hover {
+  background: var(--primary-back-dark);
+  color: var(--tertiary-text-color);
+}
+
+/* LINKS */
+
+/*
+  Some developers choose to make links look like buttons. Technically,
+  links are things you click on that take you to another page, and buttons
+  are things you click on that perform some action (like adding a product
+  to the shopping cart), but the line has become somewhat blurred.
+*/
+
+a,
+a:visited {
+  color: var(--default-text-color);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+a:hover,
+a:active {
+  color: var(--primary-back-dark);
+}

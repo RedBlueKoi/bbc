@@ -1,0 +1,7 @@
+{
+  "vueIndentScriptAndStyle": true,
+  "useTabs": false,
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "bracketSameLine": true
+}
